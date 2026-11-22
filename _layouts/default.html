@@ -7,7 +7,7 @@
 <title>{{ page.title }} | {{site.name}}</title>
 {% seo %}
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/bootstrap/5.3.9/css/bootstrap.min.css" crossorigin="anonymous">
-<link href="{{ site.baseurl }}/assets/css/screen.css?v=0" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.1" rel="stylesheet">
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.cn/css2?family=Dela+Gothic+One&family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous">
@@ -36,7 +36,7 @@
 
         <!-- Begin Menu -->
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto">
 
                 {% if page.url == "/" %}
                 <li class="nav-item active">
@@ -152,16 +152,11 @@
 ================================================== -->
 
 <script src="https://s4.zstatic.net/ajax/libs/popper.js/2.11.8/umd/popper.min.js" crossorigin="anonymous"></script>
-
 <script src="https://s4.zstatic.net/ajax/libs/bootstrap/5.3.9/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
-<script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
-
+<script src="{{ site.baseurl }}/assets/js/mediumish.js?v=0"></script>
 {% if site.lazyimages == "enabled" %}
 <script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
 {% endif %}
-
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
-
 </body>
 </html>
