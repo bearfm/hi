@@ -9,6 +9,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4"
 gem "ffi", "~> 1.17.1"   
+gem "liquid", "~> 4.0.4"
 
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
