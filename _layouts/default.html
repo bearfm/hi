@@ -74,10 +74,11 @@
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
-    <h1 class="sitetitle">四季:物語</h1>
-    <p class="lead">
-        {{ site.description }}
-    </p>
+    <div id="daily">
+        <img id="pic" src="" alt="" style="max-width:300px">
+        <p id="en"></p>
+        <p id="zh"></p>
+    </div>
 </div>
 
 <!-- Content
@@ -158,5 +159,15 @@
 <script src="https://s4.zstatic.net/ajax/libs/lazyload/2.0.3/lazyload-min.js"></script>
 {% endif %}
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
+<script>
+function icibaCallback(data) {
+  document.getElementById('en').textContent = data.content;
+  document.getElementById('zh').textContent = data.note;
+  document.getElementById('pic').src = data.picture2; // 每日图片
+}
+var s = document.createElement('script');
+s.src = 'https://open.iciba.com/dsapi/?callback=icibaCallback';
+document.body.appendChild(s);
+</script>
 </body>
 </html>
