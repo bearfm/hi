@@ -74,8 +74,7 @@
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
-    <div id="daily">
-        <img id="pic" src="" alt="" style="max-width:300px">
+    <div id="daily" style="text-align: right;height: 150px;padding-top: 50px;">
         <p id="en"></p>
         <p id="zh"></p>
     </div>
@@ -161,12 +160,15 @@
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
 <script>
 function icibaCallback(data) {
+  var div = document.getElementById('daily');
+  div.style.backgroundImage = "url('" + data.picture2 + "')";
+  div.style.backgroundRepeat = 'no-repeat';
+  div.style.backgroundSize = '100%';
   document.getElementById('en').textContent = data.content;
   document.getElementById('zh').textContent = data.note;
-  document.getElementById('pic').src = data.picture2; // 每日图片
 }
 var s = document.createElement('script');
-s.src = 'https://open.iciba.com/dsapi/?callback=icibaCallback';
+s.src = 'http://open.iciba.com/dsapi/?callback=icibaCallback';
 document.body.appendChild(s);
 </script>
 </body>
