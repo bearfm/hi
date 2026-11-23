@@ -8,11 +8,14 @@ source "https://rubygems.org"
 #
 
 gem "jekyll", "~> 4.4"
-gem "ffi", "~> 1.17.1"   
-gem "liquid", "~> 4.0.4"
 
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+# 强制用 sassc，绕开 sass-embedded 的 google-protobuf 编译问题
+gem "jekyll-sass-converter", "~> 2.2"
+gem "sassc", "~> 2.4"
+
 group :jekyll_plugins do
     gem 'jekyll-feed'
     gem 'jekyll-sitemap'
