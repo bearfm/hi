@@ -7,7 +7,7 @@
 <title>{{ page.title }} | {{site.name}}</title>
 {% seo %}
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/bootstrap/5.3.9/css/bootstrap.min.css" crossorigin="anonymous">
-<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.4" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.5" rel="stylesheet">
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.cn/css2?family=Dela+Gothic+One" rel="stylesheet">
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous">
@@ -85,22 +85,6 @@
 <div class="main-content">
     {{ content }}
 </div>
-
-{% if site.mailchimp-list %}
-<!-- Bottom Alert Bar
-================================================== -->
-<div class="alertbar">
-	<div class="container text-center">
-		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
-        <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
-            <div class="mc-field-group">
-            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
-            <input type="submit" value="Subscribe" name="subscribe" class="heart">
-            </div>
-        </form>
-	</div>
-</div>
-{% endif %}
     
 </div>
 
