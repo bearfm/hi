@@ -72,7 +72,9 @@ section.recent-posts {
 }
 
 .section-title span {
-    font-family: "Dela Gothic One", sans-serif;
+    font-family:"Yuji Boku", serif;
+    font-weight: 400;
+    font-style: normal;
     border-bottom: 1px solid rgba(0, 0, 0, .44);
     display: inline-block;
     padding-bottom: 20px;
