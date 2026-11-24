@@ -72,7 +72,7 @@ section.recent-posts {
 }
 
 .section-title span {
-    font-family:"Yuji Boku", serif;
+    font-family: "Ma Shan Zheng", cursive;
     font-weight: 400;
     font-style: normal;
     border-bottom: 1px solid rgba(0, 0, 0, .44);
@@ -146,6 +146,9 @@ section.recent-posts {
 .listfeaturedtag h2.card-title,
 .listrecent h2.card-title {
     font-size: 1.3rem;
+    font-family: "Noto Serif SC", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: 700;
     line-height: 1.25;
 }
