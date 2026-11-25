@@ -67,4 +67,12 @@ title: Home
     {% include pagination.html %}
 </span>
 </div>
-
+<script>
+function icibaCallback(data) {
+  document.getElementById('en').textContent = data.content;
+  document.getElementById('zh').textContent = data.note;
+}
+var s = document.createElement('script');
+s.src = 'https://open.iciba.com/dsapi/?callback=icibaCallback';
+document.body.appendChild(s);
+</script>

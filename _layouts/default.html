@@ -7,7 +7,7 @@
 <title>{{ page.title }} | {{site.name}}：4ji.org - 永远相信美好的事情即将发生</title>
 {% seo %}
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/bootstrap/5.3.9/css/bootstrap.min.css" crossorigin="anonymous">
-<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.6.2" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.6.3" rel="stylesheet">
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.cn/css2?family=Dela+Gothic+One&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous">
@@ -113,7 +113,7 @@
                 Copyright © {{ site.time | date: "%Y" }} {{ site.name }}(4ji.org) 
             </div>
             <div class="col-md-6 col-sm-6 text-center text-lg-end">    
-                Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>. Theme by <a target="_blank" href="https://github.com/codebygina/mediumish-theme-jekyll/">Mediumish</a>.
+                Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>. Theme by <a target="_blank" href="https://github.com/codebygina/mediumish-theme-jekyll/">Mediumish <i class="fa-brands fa-github"></i></a>.
             </div>
         </div>
     </div>
@@ -133,14 +133,5 @@
 <script src="https://s4.zstatic.net/ajax/libs/lazyload/2.0.3/lazyload-min.js"></script>
 {% endif %}
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
-<script>
-function icibaCallback(data) {
-  document.getElementById('en').textContent = data.content;
-  document.getElementById('zh').textContent = data.note;
-}
-var s = document.createElement('script');
-s.src = 'https://open.iciba.com/dsapi/?callback=icibaCallback';
-document.body.appendChild(s);
-</script>
 </body>
 </html>
