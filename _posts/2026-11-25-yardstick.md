@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "自己的尺子"
-author: 文刀刘
+author: me
 categories: [ Notepad ]
 image: https://cos.ezradio.net/post/7ba08b3b8566717f7e0c0fac9bfea581.avif?imageSlim
 featured: true

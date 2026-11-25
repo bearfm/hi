@@ -242,6 +242,7 @@ span.post-read-more {
     display: inline-block;
     float: inline-end;
     margin-block-start: 8px;
+    font-size: 1rem;
 }
 
 span.post-read-more a {
@@ -340,6 +341,31 @@ span.post-read-more a:hover {
     font-size: 1.1rem;
     line-height: 1.84;
     color: rgba(0, 0, 0, .8);
+}
+
+.article-post h2,.article-post h3,.article-post h4{
+    font-family: "Noto Serif SC", serif;
+}
+
+.article-post h2:before {
+    content: "##";
+    color: #ff0084;
+    position: absolute;
+    inset-inline-start: -2em;
+}
+
+.article-post h3:before {
+    content: "###";
+    color: #ff0084;
+    position: absolute;
+    inset-inline-start: -2em;
+}
+
+.article-post h4:before {
+    content: "####";
+    color: #ff0084;
+    position: absolute;
+    inset-inline-start: -2em;
 }
 
 blockquote {
