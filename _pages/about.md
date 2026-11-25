@@ -8,15 +8,15 @@ comments: true
 <div class="row justify-content-between">
 <div class="col-md-8 pe-5">
 
+<p class="mb-5"><img class="shadow-lg" src="https://cos.ezradio.net/theme/about.avif" alt="About" /></p>
+
 <blockquote>有一天，我想要把中国看遍<br/>有一天，我想要把世界看遍</blockquote>
 
 <p>我走过许多地方的路，行过许多地方的桥，看过许多次数的云，喝过许多种类的酒，但脚步却一直不曾停下。我在追寻五湖四海中的绚烂，也在思考三餐四季里的意义。用脚步丈量山河湖海，用目光捕捉人文世界。去向未知的远方，探寻大地的脉络；俯瞰身边的视界，记录人文的华章。在理想与现实交界处，悄悄写下一个人所见的真相与邂逅。</p>
 
 <h4>联系方式</h4>
 
-<p><a target="_blank" href="#" class="btn btn-success"><i class="fa-brands fa-weixin"></i>微信</a> <a target="_blank" href="https://github.com/bearfm" class="btn btn-dark"><i class="fa-brands fa-github"></i>Github</a> <a target="_blank" href="#" class="btn btn-dark"><i class="fa-solid fa-envelope"></i>点我复制邮件地址</a></p>
-
-<p class="mb-5"><img class="shadow-lg" src="https://cos.ezradio.net/theme/about.avif" alt="About" /></p>
+<p><a target="_blank" href="#" class="btn btn-success"><i class="fa-brands fa-weixin"></i>微信</a> <a target="_blank" href="https://github.com/bearfm" class="btn btn-dark"><i class="fa-brands fa-github"></i>Github</a> <a target="_blank" href="#" class="btn btn-info"><i class="fa-solid fa-envelope"></i>Email</a></p>
 
 <p>行做笔，心当墨。记录跋山涉水的个人感悟；路为纸，地成册，解读风景背后的时光沉淀。在自然与人文之间，发现世界。身未动，心已远。期待借助照片的色彩，加上文字的描述，为某一段走出去的旅程留下一点纪念。相信，每一张照片、每一段文字、每一秒时光，以及每一寸土地都有着不同的解读，就像每一张平静的面孔背后，都有一个鲜为人知的故事。</p>
 

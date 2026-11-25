@@ -56,6 +56,9 @@
 
                 {% include search-lunr.html %}
 
+                <li class="nav-item">
+                <button id="themeBtn" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                </li>
             </ul>
 
         <!-- End Menu -->
@@ -133,5 +136,14 @@
 <script src="https://s4.zstatic.net/ajax/libs/lazyload/2.0.3/lazyload-min.js"></script>
 {% endif %}
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
+<script src="https://s4.zstatic.net/ajax/libs/Darkmode.js/1.5.7/darkmode-js.min.js" crossorigin="anonymous"></script>
+<script>
+document.getElementById('themeBtn').onclick = ()=>{
+  const html = document.documentElement;
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+}
+</script>
 </body>
 </html>
