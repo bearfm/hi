@@ -66,7 +66,7 @@ section.recent-posts {
 }
 
 .section-title h2 {
-    border-block-end: 1px solid rgba(0, 0, 0, .125);
+    border-block-end: 1px solid var(---bs-border-color) ;
     font-weight: 700;
     font-size: 1.4rem;
     margin-block-end: 27px;
@@ -76,7 +76,7 @@ section.recent-posts {
     font-family: "Ma Shan Zheng", cursive;
     font-weight: 400;
     font-style: normal;
-    border-block-end: 1px solid rgba(0, 0, 0, .44);
+    border-block-end: 1px solid var(--bs-color);
     display: inline-block;
     padding-block-end: 20px;
     margin-block-end: -1px;
@@ -324,7 +324,7 @@ span.post-read-more a:hover {
 }
 
 .footer {
-    border-block-start: 1px solid rgba(0, 0, 0, .05) !important;
+    border-block-start: 1px solid var(---bs-border-color) !important;
     padding-block-start: 15px;
     padding-block-end: 12px;
     font-size: 0.8rem;
@@ -367,7 +367,7 @@ blockquote {
     border-inline-start: 4px solid #ff0084;
     padding: 0 20px;
     font-style: italic;
-    color: rgba(0, 0, 0, .5);
+    color: var(--bs-color-secondary);
 }
 
 .article-post p,
@@ -741,7 +741,7 @@ img {
     text-align: center;
     margin-block-end: 0rem;
     color: #999;
-    border-block-start: 1px solid #ddd;
+    border-block-start: 1px solid var(--bs-border-color);
 }
 
 .pointerup {
@@ -921,7 +921,7 @@ iframe {
 }
 
 :root[data-theme="light"] {
-  --bs-background: #fafafa;
+  --bs-background: #fff;
   --bs-background-secondary: #eaeaea;
   --bs-header: #fff;
   --bs-color: #222;
@@ -946,4 +946,42 @@ body {
   --bs-btn-border-color: #dee2e6;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-border-color: #fff;
+}
+
+/* 卡片主体 */
+[data-theme="dark"] .card,
+[data-theme="dark"] .listfeaturedtag .card {
+  background-color: var(--bs-background-secondary);
+  color: var(--bs-color);
+  border-color: var(--bs-border-color);
+}
+
+/* card-footer 重点：覆盖写死的 bg-white */
+[data-theme="dark"] .card-footer.bg-white {
+  background-color: var(--bs-background-secondary) !important;
+  color: var(--bs-color);
+  border-color: var(--bs-border-color);
+}
+
+/* 卡片标题链接，原来写了 text-dark，深色模式变白 */
+[data-theme="dark"] .card-title a.text-dark,
+[data-theme="dark"] .card-title a {
+  color: var(--bs-color) !important;
+}
+
+/* 副标题简介文字 */
+[data-theme="dark"] .card-text {
+  color: var(--bs-color);
+}
+
+/* 作者信息、日期，用次要色 */
+[data-theme="dark"] .author-meta,
+[data-theme="dark"] .post-date {
+  color: var(--bs-color-secondary);
+}
+[data-theme="dark"] .post-name a {
+  color: var(--bs-color);
+}
+[data-theme="dark"] .post-name a:hover {
+  color: #ffffff;
 }
