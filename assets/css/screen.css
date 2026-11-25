@@ -531,7 +531,7 @@ ul.tags li {
 }
 
 ul.tags li a {
-    c
+    background-color: var(--bs-background-secondary);
     color: var(--bs-color);
     border-radius: 3px;
     padding: 5px 10px;
@@ -751,6 +751,7 @@ img {
     margin-block-end: -17px;
     margin-inline-start: 49%;
     font-size: 30px;
+    color: #999;
 }
 
 .pointerup i.fa {
@@ -945,7 +946,7 @@ body {
   background-color: var(--bs-background);
   color: var(--bs-color);
 }
-/* 深色下按钮样式适配 */
+
 :root[data-theme="dark"] #themeBtn {
   --bs-btn-color: #dee2e6;
   --bs-btn-border-color: #dee2e6;
@@ -953,7 +954,6 @@ body {
   --bs-btn-hover-border-color: #fff;
 }
 
-/* 卡片主体 */
 [data-theme="dark"] .card,
 [data-theme="dark"] .listfeaturedtag .card {
   background-color: var(--bs-background-secondary);
@@ -961,33 +961,40 @@ body {
   border-color: var(--bs-border-color);
 }
 
-/* card-footer 重点：覆盖写死的 bg-white */
 [data-theme="dark"] .card-footer.bg-white {
   background-color: var(--bs-background-secondary) !important;
   color: var(--bs-color);
   border-color: var(--bs-border-color);
 }
 
-/* 卡片标题链接，原来写了 text-dark，深色模式变白 */
 [data-theme="dark"] .card-title a.text-dark,
 [data-theme="dark"] .card-title a {
   color: var(--bs-color) !important;
 }
 
-/* 副标题简介文字 */
-[data-theme="dark"] .card-text {
+[data-theme="dark"] .card-text,
+[data-theme="dark"] .post-name a:hover,
+[data-theme="dark"] .post-name a,
+[data-theme="dark"] .lunrsearchresult a,
+[data-theme="dark"] .navbar-collapse .nav-link,
+[data-theme="dark"] .navbar-collapse .nav-link:hover {
   color: var(--bs-color);
 }
 
-/* 作者信息、日期，用次要色 */
 [data-theme="dark"] .author-meta,
 [data-theme="dark"] .post-date,
-[data-theme="dark"] span.post-read-more a {
+[data-theme="dark"] span.post-read-more a,
+[data-theme="dark"] .bd-search .form-control::placeholder,
+[data-theme="dark"] .lunrsearchresult .url {
   color: var(--bs-color-secondary);
 }
-[data-theme="dark"] .post-name a {
-  color: var(--bs-color);
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
 }
-[data-theme="dark"] .post-name a:hover {
-  color: #ffffff;
+
+[data-theme="dark"] .bd-search .form-control {
+  background-color: var(--bs-background-secondary);
+  color: var(--bs-color);
+  border-color: var(--bs-border-color);
 }
