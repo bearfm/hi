@@ -24,14 +24,14 @@ a:hover {
 pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: #E3EDF3 1px solid;
+    border: var(--bs-border-color) 1px solid;
     width: 100%;
     padding: 7px;
     font-family: monospace, sans-serif;
     font-size: .9rem;
     white-space: pre;
     overflow: auto;
-    background: #fff;
+    background: var(--bs-background);
     border-radius: 0px;
     line-height: 1.6;
     color: #333;
@@ -66,7 +66,7 @@ section.recent-posts {
 }
 
 .section-title h2 {
-    border-block-end: 1px solid var(---bs-border-color) ;
+    border-block-end: 1px solid var(--bs-border-color) ;
     font-weight: 700;
     font-size: 1.4rem;
     margin-block-end: 27px;
@@ -103,13 +103,15 @@ section.recent-posts {
 
 @media (min-width:992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
+        color: var(--bs-color);
         padding-inline-end: 0.8rem;
         padding-inline-start: 0.8rem;
     }
 }
 
 .listfeaturedtag {
-    border: 1px solid rgba(0, 0, 0, .125);
+    background-color: var(--bs-listfeaturedtag);
+    border: 1px solid var(--bs-border-color);
     border-radius: .25rem;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
@@ -155,7 +157,7 @@ section.recent-posts {
 
 .listfeaturedtag h4.card-text,
 .listrecent h4.card-text {
-    color: rgba(0, 0, 0, .44);
+    color: #999;
     font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 400;
@@ -289,6 +291,7 @@ span.post-read-more a:hover {
 
 .mediumnavigation .navbar-brand {
     font-weight: 500;
+    color: var(--bs-color);
 }
 
 .mediumnavigation .dropdown-menu {
@@ -366,8 +369,8 @@ span.post-read-more a:hover {
 blockquote {
     border-inline-start: 4px solid #ff0084;
     padding: 0 20px;
-    font-style: italic;
-    color: var(--bs-color-secondary);
+    font-family: "Noto Serif SC", serif;
+    color: #999;
 }
 
 .article-post p,
@@ -528,14 +531,14 @@ ul.tags li {
 }
 
 ul.tags li a {
-    background: rgba(0, 0, 0, .05);
-    color: rgba(0, 0, 0, .6);
+    c
+    color: var(--bs-color);
     border-radius: 3px;
     padding: 5px 10px;
 }
 
 ul.tags li a:hover {
-    background: rgba(0, 0, 0, .07);
+    background: var(--bs-border-color);
     text-decoration: none;
 }
 
@@ -927,6 +930,7 @@ iframe {
   --bs-color: #222;
   --bs-color-secondary: #999;
   --bs-border-color: #dcdcdc;
+  --bs-listfeaturedtag: #fff;
 }
 :root[data-theme="dark"] {
   --bs-background: #2f2f2f;
@@ -935,6 +939,7 @@ iframe {
   --bs-color: #f5f5f5;
   --bs-color-secondary: #73747b;
   --bs-border-color: #4a4b50;
+  --bs-listfeaturedtag: #3b3d42;
 }
 body {
   background-color: var(--bs-background);
@@ -976,7 +981,8 @@ body {
 
 /* 作者信息、日期，用次要色 */
 [data-theme="dark"] .author-meta,
-[data-theme="dark"] .post-date {
+[data-theme="dark"] .post-date,
+[data-theme="dark"] span.post-read-more a {
   color: var(--bs-color-secondary);
 }
 [data-theme="dark"] .post-name a {
