@@ -327,7 +327,8 @@ span.post-read-more a:hover {
 }
 
 .footer {
-    border-block-start: 1px solid var(---bs-border-color) !important;
+    color: var(--bs-color-secondary);
+    border-block-start: 1px solid var(--bs-border-color) !important;
     padding-block-start: 15px;
     padding-block-end: 12px;
     font-size: 0.8rem;
@@ -504,8 +505,8 @@ blockquote {
 
 .share,
 .share a {
-    color: var(--bs-color);
-    fill: var(--bs-color);
+    color: var(--bs-color-secondary);
+    fill: var(--bs-color-secondary);
 }
 
 .graybg {
