@@ -920,3 +920,23 @@ iframe {
   background-size: cover;
   background-position: center;
 }
+
+:root[data-theme="light"] {
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+}
+:root[data-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e9ecef;
+}
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+/* 深色下按钮样式适配 */
+:root[data-theme="dark"] #themeBtn {
+  --bs-btn-color: #dee2e6;
+  --bs-btn-border-color: #dee2e6;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: #fff;
+}
