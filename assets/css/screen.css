@@ -40,7 +40,8 @@ pre {
 
 .mediumnavigation {
     background: rgba(255, 255, 255, .97);
-    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
+    background: var(--bs-header);
+    box-shadow: inset 0 -1px var(--bs-background-secondary);
     transition: top 0.2s ease-in-out;
 }
 
@@ -327,11 +328,9 @@ span.post-read-more a:hover {
     padding-block-start: 15px;
     padding-block-end: 12px;
     font-size: 0.8rem;
-    color: rgba(0, 0, 0, .44);
     margin-block-start: 50px;
     margin-block-end: 62px;
     position: relative;
-    background: #fff;
 }
 
 .link-dark {
@@ -342,7 +341,7 @@ span.post-read-more a:hover {
     font-family: Microsoft YaHei, SimHei, Alice, Arial, Helvetica, Roboto, Open Sans, serif;
     font-size: 1.1rem;
     line-height: 1.84;
-    color: rgba(0, 0, 0, .8);
+    color: var(--bs-color);
 }
 
 .article-post h2,.article-post h3,.article-post h4{
@@ -502,8 +501,8 @@ blockquote {
 
 .share,
 .share a {
-    color: rgba(0, 0, 0, .44);
-    fill: rgba(0, 0, 0, .44);
+    color: var(--bs-color);
+    fill: var(--bs-color);
 }
 
 .graybg {
@@ -922,16 +921,24 @@ iframe {
 }
 
 :root[data-theme="light"] {
-  --bs-body-bg: #ffffff;
-  --bs-body-color: #212529;
+  --bs-background: #fafafa;
+  --bs-background-secondary: #eaeaea;
+  --bs-header: #fff;
+  --bs-color: #222;
+  --bs-color-secondary: #999;
+  --bs-border-color: #dcdcdc;
 }
 :root[data-theme="dark"] {
-  --bs-body-bg: #121212;
-  --bs-body-color: #e9ecef;
+  --bs-background: #2f2f2f;
+  --bs-background-secondary: #3b3d42;
+  --bs-header: #252627;
+  --bs-color: #f5f5f5;
+  --bs-color-secondary: #73747b;
+  --bs-border-color: #4a4b50;
 }
 body {
-  background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
+  background-color: var(--bs-background);
+  color: var(--bs-color);
 }
 /* 深色下按钮样式适配 */
 :root[data-theme="dark"] #themeBtn {
