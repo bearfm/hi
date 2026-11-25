@@ -946,32 +946,28 @@ body {
   background-color: var(--bs-background);
   color: var(--bs-color);
 }
-
 :root[data-theme="dark"] #themeBtn {
   --bs-btn-color: #dee2e6;
   --bs-btn-border-color: #dee2e6;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-border-color: #fff;
 }
-
 [data-theme="dark"] .card,
-[data-theme="dark"] .listfeaturedtag .card {
+[data-theme="dark"] .listfeaturedtag .card,
+[data-theme="dark"] .bd-search .form-control {
   background-color: var(--bs-background-secondary);
   color: var(--bs-color);
   border-color: var(--bs-border-color);
 }
-
 [data-theme="dark"] .card-footer.bg-white {
   background-color: var(--bs-background-secondary) !important;
   color: var(--bs-color);
   border-color: var(--bs-border-color);
 }
-
 [data-theme="dark"] .card-title a.text-dark,
 [data-theme="dark"] .card-title a {
   color: var(--bs-color) !important;
 }
-
 [data-theme="dark"] .card-text,
 [data-theme="dark"] .post-name a:hover,
 [data-theme="dark"] .post-name a,
@@ -980,7 +976,6 @@ body {
 [data-theme="dark"] .navbar-collapse .nav-link:hover {
   color: var(--bs-color);
 }
-
 [data-theme="dark"] .author-meta,
 [data-theme="dark"] .post-date,
 [data-theme="dark"] span.post-read-more a,
@@ -988,13 +983,6 @@ body {
 [data-theme="dark"] .lunrsearchresult .url {
   color: var(--bs-color-secondary);
 }
-
 [data-theme="dark"] .navbar-toggler-icon {
   filter: invert(1);
-}
-
-[data-theme="dark"] .bd-search .form-control {
-  background-color: var(--bs-background-secondary);
-  color: var(--bs-color);
-  border-color: var(--bs-border-color);
 }
