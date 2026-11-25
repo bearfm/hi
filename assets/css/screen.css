@@ -46,6 +46,7 @@ pre {
 
 .main-content {
     min-height: 300px;
+    padding-block-start: 2rem;
 }
 
 .site-content {
@@ -306,9 +307,9 @@ span.post-read-more a:hover {
     cursor: pointer;
 }
 
-.mediumnavigation .navbar-brand img {
-    max-height: 30px;
-    margin-inline-end: 5px;
+.mediumnavigation .navbar-brand h1 {
+    margin: 0;
+    line-height: 1;
 }
 
 .mainheading h1.sitetitle,.navbar-brand h1 {
@@ -350,22 +351,16 @@ span.post-read-more a:hover {
 .article-post h2:before {
     content: "##";
     color: #ff0084;
-    position: absolute;
-    inset-inline-start: -2em;
 }
 
 .article-post h3:before {
     content: "###";
     color: #ff0084;
-    position: absolute;
-    inset-inline-start: -2em;
 }
 
 .article-post h4:before {
     content: "####";
     color: #ff0084;
-    position: absolute;
-    inset-inline-start: -2em;
 }
 
 blockquote {
