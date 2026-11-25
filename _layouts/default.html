@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script>
+const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+document.documentElement.setAttribute('data-theme', t);
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
@@ -136,7 +140,6 @@
 <script src="https://s4.zstatic.net/ajax/libs/lazyload/2.0.3/lazyload-min.js"></script>
 {% endif %}
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
-<script src="https://s4.zstatic.net/ajax/libs/Darkmode.js/1.5.7/darkmode-js.min.js" crossorigin="anonymous"></script>
 <script>
 document.getElementById('themeBtn').onclick = ()=>{
   const html = document.documentElement;
@@ -144,6 +147,7 @@ document.getElementById('themeBtn').onclick = ()=>{
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
 }
+</script>
 </script>
 </body>
 </html>
