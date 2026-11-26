@@ -73,7 +73,7 @@ section.recent-posts {
 }
 
 .section-title span {
-    font-family: "Ma Shan Zheng", cursive;
+    font-family: "LXGW WenKai Mono TC", monospace;
     font-weight: 400;
     font-style: normal;
     border-block-end: 1px solid var(--bs-color);
@@ -312,7 +312,9 @@ span.post-read-more a:hover {
 }
 
 .mediumnavigation .navbar-brand h1 {
-    font-family: "Dela Gothic One", sans-serif;
+    font-family: "Zhi Mang Xing", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-size: 2rem;
     margin: 0;
     line-height: 1;
@@ -926,11 +928,11 @@ iframe {
   background-position: center;
 }
 
-.title a {
+.titlea {
     text-decoration: none;
 }
 
-.title a:hover {
+.titlea:hover {
     text-decoration: underline;
     text-decoration-color: #ffd400;
     text-decoration-skip-ink: none;
