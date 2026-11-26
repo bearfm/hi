@@ -33,7 +33,13 @@ comments: true
         </div>
     </div>
 </div>
-
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+        <img src="https://cos.ezradio.net/post/5919ee669e1d2a4f0cf2522f5f01fb9c.avif?imageSlim"/>
+         </div>
+    </div>
+</div>       
 <!-- 引入你托管的 simple-jekyll-search 脚本并初始化 -->
 <script src="https://cos.ezradio.net/ajax/libs/simple-jekyll-search/1.9.2/simple-jekyll-search.min.js"></script>
 <script>
