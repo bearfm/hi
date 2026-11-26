@@ -151,7 +151,6 @@ section.recent-posts {
     font-family: "Noto Serif SC", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-weight: 700;
     line-height: 1.25;
 }
 
@@ -312,17 +311,18 @@ span.post-read-more a:hover {
 }
 
 .mediumnavigation .navbar-brand h1 {
+    font-family: "Dela Gothic One", sans-serif;
     font-size: 2rem;
     margin: 0;
     line-height: 1;
 }
 
-.mainheading h1.sitetitle,.navbar-brand h1 {
+.mainheading h3.sitetitle {
     font-family: "Dela Gothic One", sans-serif;
+    font-weight: 200;
 }
 
 .mainheading h1.posttitle {
-    font-weight: 700;
     margin-block-end: 1rem;
 }
 

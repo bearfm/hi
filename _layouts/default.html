@@ -10,12 +10,12 @@ document.documentElement.setAttribute('data-theme', t);
 <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
 <title>{{ page.title }} | {{site.name}}：4ji.org - 永远相信美好的事情即将发生</title>
 {% seo %}
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/bootstrap/5.3.9/css/bootstrap.min.css" crossorigin="anonymous">
-<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.7.6" rel="stylesheet">
+<link rel="stylesheet" href="https://cos.ezradio.net/ajax/libs/bootstrap/5.3.9/css/bootstrap.min.css" integrity="sha512-ZuV2yPmu5OcwTgfUHURSM2QYEMPA9UIPpMr/U9gJEdRB+1VcCJaUc/GJrO9WwZVNR3JB7mgzkRtRwor+BcaPAA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link href="{{ site.baseurl }}/assets/css/screen.css?v=0.7.7" rel="stylesheet">
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.cn/css2?family=Dela+Gothic+One&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous">
-<script src="https://s4.zstatic.net/ajax/libs/jquery/4.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cos.ezradio.net/ajax/libs/font-awesome/7.3.1/css/all.css"  integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cos.ezradio.net/ajax/libs/jquery/4.1.0/jquery.min.js" integrity="sha512-LAwtVcZXPhBWVFQr9JK27ozsjKIZWJ6Y811gxInOV82L55pvK12upCcTye8dhlVJ5iIllnd4LO0zq9Ue80vxbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
@@ -47,15 +47,19 @@ document.documentElement.setAttribute('data-theme', t);
                 {% else %}
                 <li class="nav-item">
                 {% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                <a class="nav-link" href="{{ site.baseurl }}/categories/">Blog</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                <a class="nav-link" href="{{ site.baseurl }}/about/">About</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/friend">Friend</a>
+                <a class="nav-link" href="{{ site.baseurl }}/friend/">Friend</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://earadio.net/">Radio</a>
                 </li>
 
                 {% include search-lunr.html %}
@@ -133,11 +137,10 @@ document.documentElement.setAttribute('data-theme', t);
 <!-- Scripts
 ================================================== -->
 
-<script src="https://s4.zstatic.net/ajax/libs/popper.js/2.11.8/umd/popper.min.js" crossorigin="anonymous"></script>
-<script src="https://s4.zstatic.net/ajax/libs/bootstrap/5.3.9/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://cos.ezradio.net/ajax/libs/bootstrap/5.3.9/js/bootstrap.bundle.min.js" integrity="sha512-e+7khtwPXnlvjbSjbxVllU8uzgqxAQhYZ1II5AyKC8G/IGlMsYo+YaUUea4Dnfv6adjq7+dOMPXFKOPTPfHJAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ site.baseurl }}/assets/js/mediumish.js?v=0"></script>
 {% if site.lazyimages == "enabled" %}
-<script src="https://s4.zstatic.net/ajax/libs/lazyload/2.0.3/lazyload-min.js"></script>
+<script src="https://cos.ezradio.net/ajax/libs/lazyload/2.0.3/lazyload-min.js" integrity="sha512-AsI20ZcrzATYNk6jHw9XywNXt2fqEX03x4hArLWhRuHTYdXFpPUhEuRgt32Akfbj5O4FR5xUxoH9gFWujpzo0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endif %}
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
 <script>
