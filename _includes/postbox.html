@@ -18,7 +18,7 @@
         </div>
         <div class="card-body">
             <h2 class="card-title">
-                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                <a class="text-dark title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 {% if post.rating %}
                 <div class="mb-2 mt-2 fw-normal">
                 {% include star_rating_postbox.html %}
@@ -42,7 +42,7 @@
                 {% endif %}
                 <span class="post-date">{{ post.date | date: "%Y年%m月%d日" }}</span>
                 </span>
-                <span class="post-read-more"><a href="{{ site.baseurl }}{{ post.url }}" title="Read Story"><i class="fa-regular fa-bookmark"></i></a></span>
+                <span class="post-read-more"><a href="{{ site.baseurl }}{{ post.url }}" title="Read Story"><i class="fa-regular fa-chart-bar"></i></a></span>
                 <div class="clearfix"></div>
             </div>
         </div>

@@ -160,6 +160,7 @@ section.recent-posts {
     font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 400;
+    padding-block-start: .6rem;
 }
 
 .featured-box-img-cover {
@@ -923,6 +924,18 @@ iframe {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.title a:hover {
+    text-decoration: underline;
+    text-decoration-color: #ffd400;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: .16em;
+    text-underline-offset: .2em;
 }
 
 :root[data-theme="light"] {
