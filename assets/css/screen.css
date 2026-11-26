@@ -9,6 +9,8 @@ License: https://www.wowthemes.net/freebies-license/
 }
 .mainheading {
     padding: 1rem 0rem;
+    position:relative; 
+    overflow:hidden;
 }
 
 a {
@@ -1002,4 +1004,66 @@ body {
 }
 [data-theme="dark"] .navbar-toggler-icon {
   filter: invert(1);
+}
+
+/* 区域限制 */
+.mainheading{ position:relative; overflow:hidden; }
+
+/* 落叶层：铺满 .mainheading 内部 */
+.fx-layer{
+  position:absolute; inset:0;
+  pointer-events:none;     /* 叶子不挡鼠标，标题/链接仍可点 */
+  overflow:hidden;
+  z-index:1;
+}
+.fx-layer.is-on{ display:block; }
+
+/* 每片叶子的外层：负责"竖直下落 + 整体水平漂移 + 淡入淡出" */
+.fx-item{
+  position:absolute;
+  left:var(--x);
+  top:-8%;                 /* 从区域顶边上方出现 */
+  width:var(--w); height:var(--h);
+  transform:translateX(var(--drift));  /* 斜飘：下落同时横向漂移 */
+  opacity:0;
+  will-change:top,opacity;
+  animation:fx-fall var(--dur) linear var(--delay) infinite;
+}
+
+/* 中层：左右来回摆动（被风吹得晃） */
+.fx-move{
+  display:block; width:100%; height:100%;
+  animation:fx-sway var(--sway) ease-in-out infinite;
+}
+
+/* 最内层 svg：自转 + 倾斜，模拟翻滚 */
+.fx-svg{
+  display:block; width:100%; height:100%;
+  transform:rotate(var(--r0)) skewY(var(--tilt));
+  fill:var(--c);
+  animation:fx-spin var(--dur) linear var(--delay) infinite;
+}
+
+/* 下落：top 从 -8% 到 108%（百分比相对区域高度），中途淡入再淡出 */
+@keyframes fx-fall{
+  0%   { top:-8%;  opacity:0; }
+  8%   { opacity:var(--o); }
+  90%  { opacity:var(--o); }
+  100% { top:108%; opacity:0; }
+}
+/* 摆动：以振幅 amp 左右晃 */
+@keyframes fx-sway{
+  0%,100%{ transform:translateX(calc(var(--amp) * -1)); }
+  50%    { transform:translateX(var(--amp)); }
+}
+/* 自转：从 r0 转到 r1 */
+@keyframes fx-spin{
+  from{ transform:rotate(var(--r0)) skewY(var(--tilt)); }
+  to  { transform:rotate(var(--r1)) skewY(var(--tilt)); }
+}
+
+/* 无障碍：用户偏好减少动效时停止动画，叶子静态显示 */
+@media (prefers-reduced-motion: reduce){
+  .fx-item,.fx-move,.fx-svg{ animation:none; }
+  .fx-item{ opacity:var(--o); top:40%; }
 }
