@@ -1,0 +1,18 @@
+<img id="themeIllust" class="themeIllust"
+     src="https://cos.ezradio.net/theme/theme_home.png" alt="" style="float: inline-start;">
+
+<script>
+(function () {
+  var MAP  = [2, 1, 2, 3, 1, 2, 3, 1, 2, 3];
+  var base = "https://cos.ezradio.net/theme/";
+
+  var tail = new Date().getDate() % 10;
+  var n    = MAP[tail];
+  var name = (n === 1) ? "theme_home.png" : "theme_home" + n + ".png";
+
+  var img = document.getElementById("themeIllust");
+  if (img && img.src.indexOf(name) === -1) {
+    img.src = base + name;
+  }
+})();
+</script>

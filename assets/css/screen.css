@@ -321,6 +321,7 @@ span.post-read-more a:hover {
 .mainheading h3.sitetitle {
     font-family: "Noto Serif SC", serif;
     font-weight: 200;
+    padding-block-start: 1rem;
 }
 
 .mainheading h1.posttitle {
@@ -380,6 +381,7 @@ blockquote {
 .article-post p,
 .article-post blockquote {
     margin: 0 0 1.5rem 0;
+    letter-spacing: .04em;
 }
 
 .featured-image {
@@ -922,10 +924,9 @@ iframe {
 }
 
 #daily {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: var(--bs-color-secondary);
+  padding: 20px 25px;
+  line-height: 1.6;
+  background-color: #f5f2e9;
 }
 
 .titlea {
@@ -941,7 +942,7 @@ iframe {
 }
 
 :root[data-theme="light"] {
-  --bs-background: #fff;
+  --bs-background: #fafafa;
   --bs-background-secondary: #eaeaea;
   --bs-header: #fff;
   --bs-color: #222;
