@@ -62,9 +62,14 @@ document.documentElement.setAttribute('data-theme', t);
                 <a class="nav-link titlea" target="_blank" href="https://ezradio.net/">Radio</a>
                 </li>
 
-                {% include search-lunr.html %}
+                <li class="nav-item">
+                <a class="nav-link titlea" target="_blank" href="{{ site.baseurl }}/search/">Search</a>
+                </li>
+
+                <!--{% include search-lunr.html %}-->
 
                 <li class="nav-item">
+                <a id="themeBtn" class="nav-link" href="{{ site.baseurl }}/search/"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a id="themeBtn" class="nav-link" href="javascript:void(0);"><i class="fa-solid fa-circle-half-stroke"></i></a>
                 </li>
             </ul>
