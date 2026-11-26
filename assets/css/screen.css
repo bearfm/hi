@@ -1007,24 +1007,11 @@ body {
   filter: invert(1);
 }
 
-<<<<<<< HEAD
 [data-theme="dark"] #daily {
   background-color: #4b4535;
 }
 
-/* 落叶层：铺满 .mainheading 内部 */
-.fx-layer{
-  position:absolute; inset:0;
-  pointer-events:none;     /* 叶子不挡鼠标，标题/链接仍可点 */
-  overflow:hidden;
-  z-index:1;
-}
-.fx-layer.is-on{ display:block; }
-
-/* 每片叶子的外层：负责"竖直下落 + 整体水平漂移 + 淡入淡出" */
-=======
 .fx-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
->>>>>>> 34c0983f8bd19a5fbc513f1dad1b89f63cbef738
 .fx-item{
   position:absolute;top:-8%;left:var(--x,50%);
   width:var(--w,20px);height:var(--h,20px);
