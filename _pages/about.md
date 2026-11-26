@@ -33,7 +33,7 @@ comments: true
 
 <p>如果你觉得我的小站还不错，那么我就厚脸皮求一波打赏。真的，一分也是爱，赠人玫瑰，手有余香，先谢谢您了！</p>
 
-<a target="_blank" href="https://poor.cn/home" class="btn btn-danger">点这里打赏</a> <!--<a target="_blank" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/" class="btn btn-warning">Documentation</a>-->
+<a target="_blank" href="https://poor.cn/home" class="btn btn-danger">点这里打赏</a> <a target="_blank" href="https://ezradio.net/" class="btn btn-warning">耳朵的旅行</a>
 
 </div>
 </div>
