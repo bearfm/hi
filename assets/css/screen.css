@@ -353,6 +353,7 @@ span.post-read-more a:hover {
     letter-spacing: 2px;
     white-space: nowrap;
     line-height: 0;
+    margin-block-start: -5px;
 }
 
 .logo-sub {
@@ -1025,11 +1026,8 @@ iframe {
   border-radius: .25rem;
 }
 
-.titlea {
-    text-decoration: underline;
-}
-
 .titlea:hover {
+    text-decoration: underline;
     text-decoration-color: #6b7a63;
     text-decoration-skip-ink: none;
     text-decoration-thickness: .16em;
