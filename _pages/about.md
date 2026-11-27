@@ -14,13 +14,13 @@ comments: true
 
 <p>我走过许多地方的路，行过许多地方的桥，看过许多次数的云，喝过许多种类的酒，但脚步却一直不曾停下。我在追寻五湖四海中的绚烂，也在思考三餐四季里的意义。用脚步丈量山河湖海，用目光捕捉人文世界。去向未知的远方，探寻大地的脉络；俯瞰身边的视界，记录人文的华章。在理想与现实交界处，悄悄写下一个人所见的真相与邂逅。</p>
 
-<h4>联系方式</h4>
+<h3>联系方式</h3>
 
 <p><a target="_blank" href="#" class="btn btn-success"><i class="fa-brands fa-weixin"></i>微信</a> <a target="_blank" href="https://github.com/bearfm" class="btn btn-dark"><i class="fa-brands fa-github"></i>Github</a> <a target="_blank" href="#" class="btn btn-info"><i class="fa-solid fa-envelope"></i>Email</a></p>
 
 <p>行做笔，心当墨。记录跋山涉水的个人感悟；路为纸，地成册，解读风景背后的时光沉淀。在自然与人文之间，发现世界。身未动，心已远。期待借助照片的色彩，加上文字的描述，为某一段走出去的旅程留下一点纪念。相信，每一张照片、每一段文字、每一秒时光，以及每一寸土地都有着不同的解读，就像每一张平静的面孔背后，都有一个鲜为人知的故事。</p>
 
-<h4>我所走过的足迹（还在补充各种）</h4>
+<h3>我所走过的足迹（还在补充各种）</h3>
 
 <div id="my-footprints-map" style="width: 100%; height: 400px;"></div>
 
