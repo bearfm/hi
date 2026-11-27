@@ -346,10 +346,15 @@ span.post-read-more a:hover {
     padding: 8px 20px;
 }
 
+.logo:hover {
+    background: url('https://cos.ezradio.net/theme/logo.webp');
+    background-size: cover;
+}
+
 .logo-main {
     font-family: "Mochiy Pop P One", sans-serif;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 2px;
     white-space: nowrap;
     line-height: 0;
