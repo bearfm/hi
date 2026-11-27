@@ -14,13 +14,17 @@ License: https://www.wowthemes.net/freebies-license/
 }
 
 a {
-    color: #83a3b2;
-    transition: all 0.2s;
+    color: var(--bs-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(74, 93, 78, 0.35);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #0aaeba;
-    text-decoration: none;
+    color: var(--bs-link-hover);
+    text-decoration-color: rgba(46, 59, 49, 0.9);
 }
 
 pre {
@@ -156,7 +160,7 @@ section.recent-posts {
 
 .listfeaturedtag h4.card-text,
 .listrecent h4.card-text {
-    color: #999;
+    color: var(--bs-color-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 400;
@@ -360,24 +364,27 @@ span.post-read-more a:hover {
 
 .article-post h2:before {
     content: "##";
-    color: #ff0084;
+    color: var(--bs-quote-border);
+    padding-inline-end: .5rem;
 }
 
 .article-post h3:before {
     content: "###";
-    color: #ff0084;
+    color: var(--bs-quote-border);
+    padding-inline-end: .5rem;
 }
 
 .article-post h4:before {
     content: "####";
-    color: #ff0084;
+    color: var(--bs-quote-border);
+    padding-inline-end: .5rem;
 }
 
 blockquote {
-    border-inline-start: 4px solid #ff0084;
+    border-inline-start: 2px solid var(--bs-quote-border);
     padding: 0 20px;
     font-family: "Noto Serif SC", serif;
-    color: #999;
+    color: var(--bs-color-secondary);
 }
 
 .article-post p,
@@ -557,7 +564,7 @@ ul.tags li a:hover {
 .sep {
     height: 1px;
     width: 20px;
-    background: #999;
+    background: var(--bs-color-secondary);
     margin: 0px auto;
     margin-block-end: 1.2rem;
 }
@@ -750,7 +757,7 @@ img {
     padding: 15px 0 0 0;
     text-align: center;
     margin-block-end: 0rem;
-    color: #999;
+    color: var(--bs-color-secondary);
     border-block-start: 1px solid var(--bs-border-color);
 }
 
@@ -758,7 +765,7 @@ img {
     margin-block-end: -17px;
     margin-inline-start: 49%;
     font-size: 30px;
-    color: #999;
+    color: var(--bs-color-secondary);
 }
 
 .pointerup i.fa {
@@ -928,17 +935,16 @@ iframe {
 #daily {
   padding: 20px 25px;
   line-height: 1.6;
-  background-color: #f5f2e9;
+  background-color: #f7f5f0;
   border-radius: .25rem;
 }
 
 .titlea {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .titlea:hover {
-    text-decoration: underline;
-    text-decoration-color: #83a3b2;
+    text-decoration-color: #6b7a63;
     text-decoration-skip-ink: none;
     text-decoration-thickness: .16em;
     text-underline-offset: .2em;
@@ -948,19 +954,25 @@ iframe {
   --bs-background: #fafafa;
   --bs-background-secondary: #eaeaea;
   --bs-header: #fff;
-  --bs-color: #222;
-  --bs-color-secondary: #999;
+  --bs-color: #3A3835;
+  --bs-color-secondary: #78736D;
   --bs-border-color: #dcdcdc;
   --bs-listfeaturedtag: #fff;
+  --bs-link: #4A5D4E;
+  --bs-link-hover: #2E3B31;
+  --bs-quote-border: #A89B8C;
 }
 :root[data-theme="dark"] {
-  --bs-background: #2f2f2f;
-  --bs-background-secondary: #3b3d42;
-  --bs-header: #252627;
-  --bs-color: #f5f5f5;
-  --bs-color-secondary: #73747b;
-  --bs-border-color: #4a4b50;
-  --bs-listfeaturedtag: #3b3d42;
+  --bs-background: #1E1D1B;
+  --bs-background-secondary: #282623;
+  --bs-header: #181715;
+  --bs-color: #DCD8D0;
+  --bs-color-secondary: #8E8880;
+  --bs-border-color: #383530;
+  --bs-listfeaturedtag: #282623;
+  --bs-link: #8FA393;
+  --bs-link-hover: #B2C4B5;
+  --bs-quote-border: #6E655A;
 }
 body {
   background-color: var(--bs-background);
@@ -1008,7 +1020,7 @@ body {
 }
 
 [data-theme="dark"] #daily {
-  background-color: #4b4535;
+  background-color: #2B2823;
 }
 
 .fx-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
