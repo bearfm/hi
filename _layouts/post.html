@@ -162,24 +162,36 @@ https://search.google.com/structured-data/testing-tool/u/0/
 }
 </script>
 {% endif %}
-<!-- Lightbox2 CSS -->
-<link rel="stylesheet" href="https://cos.ezradio.net/ajax/libs/lightbox2/2.12.0/css/lightbox.min.css">
-<script src="https://cos.ezradio.net/ajax/libs/lightbox2/2.12.0/js/lightbox.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var scope = document.querySelector('.article-post');
-    if (!scope) return;
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cos.ezradio.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".article-post");   // ← 改成你的容器类名
+  if (!container) return;
 
-    scope.querySelectorAll('img').forEach(function (img) {
-      if (img.closest('a[data-lightbox]')) return;
-
-      var a = document.createElement('a');
-      a.href = img.currentSrc || img.src;
-      a.setAttribute('data-lightbox', 'post-gallery');
-      a.setAttribute('data-title', img.alt || '');   // 图注直接取 alt
-
-      img.parentNode.insertBefore(a, img);
-      a.appendChild(img);
-    });
+  container.querySelectorAll("img").forEach(function (img) {
+    let link = img.closest("a");
+    if (link) {
+      link.setAttribute("data-fancybox", "gallery");
+      if (!link.href || !link.href.match(/\.(png|jpe?g|gif|webp|avif)(\?.*)?$/i)) {
+        link.href = img.src;
+      }
+      if (link.target === "_blank") link.removeAttribute("target");
+    } else {
+      link = document.createElement("a");
+      link.href = img.src;
+      link.setAttribute("data-fancybox", "gallery");
+      img.parentNode.insertBefore(link, img);
+      link.appendChild(img);
+    }
   });
+
+  $('[data-fancybox="gallery"]').fancybox({
+    thumbs: { autoStart: true },
+    buttons: ["zoom", "slideShow", "fullScreen", "thumbs", "close"],
+    caption: function (item) {          // 图注取 alt，和你的 alt 方案打通
+      return item.$trigger[0] ? (item.$trigger[0].querySelector("img")?.alt || "") : "";
+    }
+  });
+});
 </script>
