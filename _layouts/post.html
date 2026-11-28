@@ -165,15 +165,18 @@ https://search.google.com/structured-data/testing-tool/u/0/
     <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cos.ezradio.net/ajax/libs/fancybox/3.5.7/fancybox-jquery4-compat.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cos.ezradio.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
+    <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".article-post");   // ← 改成你的容器类名
+  const container = document.querySelector(".article-post");   // 你的容器类名
   if (!container) return;
 
   container.querySelectorAll("img").forEach(function (img) {
     let link = img.closest("a");
+    const cap = img.alt || "";                                 // 图注取 alt
+
     if (link) {
       link.setAttribute("data-fancybox", "gallery");
+      link.setAttribute("data-caption", cap);
       if (!link.href || !link.href.match(/\.(png|jpe?g|gif|webp|avif)(\?.*)?$/i)) {
         link.href = img.src;
       }
@@ -182,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link = document.createElement("a");
       link.href = img.src;
       link.setAttribute("data-fancybox", "gallery");
+      link.setAttribute("data-caption", cap);
       img.parentNode.insertBefore(link, img);
       link.appendChild(img);
     }
@@ -190,8 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
   $('[data-fancybox="gallery"]').fancybox({
     thumbs: { autoStart: true },
     buttons: ["zoom", "slideShow", "fullScreen", "thumbs", "close"],
-    caption: function (item) {          // 图注取 alt，和你的 alt 方案打通
-      return item.$trigger[0] ? (item.$trigger[0].querySelector("img")?.alt || "") : "";
+    caption: function () {
+      // this 就是触发点击的那个 <a>，data-caption 是上面写进去的 alt
+      return this.getAttribute("data-caption") || "";
     }
   });
 });
