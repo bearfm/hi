@@ -167,26 +167,24 @@ https://search.google.com/structured-data/testing-tool/u/0/
     <script src="https://cos.ezradio.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".article-post");   // 你的容器类名
+  const container = document.querySelector(".article-post");
   if (!container) return;
 
   container.querySelectorAll("img").forEach(function (img) {
     let link = img.closest("a");
     const cap = img.alt || "";
+    const src = img.currentSrc || img.src;      // 真实图片地址
 
     if (link) {
       link.setAttribute("data-fancybox", "gallery");
-      link.setAttribute("data-type", "image");                 // ← 关键
+      link.setAttribute("data-src", src);        // ← 用 data-src
       link.setAttribute("data-caption", cap);
-      if (!link.href || !link.href.match(/\.(png|jpe?g|gif|webp|avif)(\?.*)?$/i)) {
-        link.href = img.src;
-      }
       if (link.target === "_blank") link.removeAttribute("target");
     } else {
       link = document.createElement("a");
-      link.href = img.src;
+      link.href = src;
       link.setAttribute("data-fancybox", "gallery");
-      link.setAttribute("data-type", "image");                 // ← 关键
+      link.setAttribute("data-src", src);        // ← 用 data-src
       link.setAttribute("data-caption", cap);
       img.parentNode.insertBefore(link, img);
       link.appendChild(img);
