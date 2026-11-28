@@ -445,17 +445,17 @@ span.post-read-more a:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 /* fancybox 包裹层不要继承任何布局干扰 */
-.article-post a.fancybox-item {
+.article-post aa[data-fancybox] {
   display: contents;   /* 关键：让 <a> 在布局上"消失"，img 直接参与父级网格 */
 }
 
 /* ========== 单图：alt 作为图注 ========== */
 .article-post p:has(> img:only-child) img[alt]:not([alt=""]),
-.article-post p:has(> a.fancybox-item:only-child > img) img[alt]:not([alt=""]) {
+.article-post p:has(> aa[data-fancybox]:only-child > img) img[alt]:not([alt=""]) {
   margin-bottom: .4rem;
 }
 .article-post p:has(> img:only-child) img[alt]:not([alt=""])::after,
-.article-post p:has(> a.fancybox-item:only-child > img) img[alt]:not([alt=""])::after {
+.article-post p:has(> aa[data-fancybox]:only-child > img) img[alt]:not([alt=""])::after {
   content: attr(alt);
   display: block;
   margin: 0 0 2rem;

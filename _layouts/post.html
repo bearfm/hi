@@ -162,51 +162,45 @@ https://search.google.com/structured-data/testing-tool/u/0/
 }
 </script>
 {% endif %}
-    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cos.ezradio.net/ajax/libs/fancybox/3.5.7/fancybox-jquery4-compat.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cos.ezradio.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cos.ezradio.net/ajax/libs/fancybox/6.1/fancybox.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cos.ezradio.net/ajax/libs/fancybox/6.1/fancybox.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".article-post");
   if (!container) return;
 
-  // 收集所有图片，构造 fancybox 需要的数组
-  const items = [];
   container.querySelectorAll("img").forEach(function (img) {
-    // 去掉已有的 a 包裹（如果之前脚本跑过）
-    const existingA = img.closest("a");
-    if (existingA && existingA.hasAttribute("data-fancybox")) {
-      // 把 img 提出来，替换掉 a
-      existingA.parentNode.insertBefore(img, existingA);
-      existingA.remove();
+    // 清掉之前 3.x 脚本可能残留的 a 包裹，避免双层嵌套
+    const old = img.closest("a");
+    if (old && old.classList.contains("fancybox-item")) {
+      old.parentNode.insertBefore(img, old);
+      old.remove();
     }
+    if (img.closest("a[data-fancybox]")) return; // 已包过就跳过
 
-    // 新建一个纯展示的 a（不带 data-fancybox，避免 fancybox 自动接管）
+    const src = img.currentSrc || img.src;
     const a = document.createElement("a");
-    a.href = img.currentSrc || img.src;
+    a.href = src;
+    a.setAttribute("data-fancybox", "gallery");   // 同名 = 同一组，可左右切换
+    a.setAttribute("data-src", src);              // 显式图源，杜绝类型误判
+    a.setAttribute("data-type", "image");
+    a.setAttribute("data-caption", img.alt || ""); // 图注取 alt
     a.className = "fancybox-item";
-    a.setAttribute("data-index", items.length);
     img.parentNode.insertBefore(a, img);
     a.appendChild(img);
-
-    items.push({
-      src: img.currentSrc || img.src,
-      type: "image",
-      opts: { caption: img.alt || "" }
-    });
   });
 
-  // 点击时手动打开，指定从第几张开始
-  container.addEventListener("click", function (e) {
-    const a = e.target.closest("a.fancybox-item");
-    if (!a) return;
-    e.preventDefault();
-    const idx = parseInt(a.getAttribute("data-index"), 10) || 0;
-    $.fancybox.open(items, {
-      thumbs: { autoStart: true },
-      buttons: ["zoom", "slideShow", "fullScreen", "thumbs", "close"],
-      loop: true
-    }, idx);
+  // 声明式绑定：点哪个就从哪张开始，循环/缩略图默认全开
+  Fancybox.bind(container, "a[data-fancybox='gallery']", {
+    // 缩略图默认是 modern 风格，想换可加：Carousel: { Thumbs: { type: "classic" } }
+    Toolbar: {
+      display: {
+        left: ["infobar"],
+        middle: [],
+        right: ["zoomIn", "zoomOut", "slideshow", "fullscreen", "thumbs", "close"],
+      },
+    },
+    Carousel: { transition: "fade" },
   });
 });
 </script>
