@@ -170,33 +170,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".article-post");
   if (!container) return;
 
+  // 收集所有图片，构造 fancybox 需要的数组
+  const items = [];
   container.querySelectorAll("img").forEach(function (img) {
-    let link = img.closest("a");
-    const cap = img.alt || "";
-    const src = img.currentSrc || img.src;      // 真实图片地址
-
-    if (link) {
-      link.setAttribute("data-fancybox", "gallery");
-      link.setAttribute("data-src", src);        // ← 用 data-src
-      link.setAttribute("data-caption", cap);
-      if (link.target === "_blank") link.removeAttribute("target");
-    } else {
-      link = document.createElement("a");
-      link.href = src;
-      link.setAttribute("data-fancybox", "gallery");
-      link.setAttribute("data-src", src);        // ← 用 data-src
-      link.setAttribute("data-caption", cap);
-      img.parentNode.insertBefore(link, img);
-      link.appendChild(img);
+    // 去掉已有的 a 包裹（如果之前脚本跑过）
+    const existingA = img.closest("a");
+    if (existingA && existingA.hasAttribute("data-fancybox")) {
+      // 把 img 提出来，替换掉 a
+      existingA.parentNode.insertBefore(img, existingA);
+      existingA.remove();
     }
+
+    // 新建一个纯展示的 a（不带 data-fancybox，避免 fancybox 自动接管）
+    const a = document.createElement("a");
+    a.href = img.currentSrc || img.src;
+    a.className = "fancybox-item";
+    a.setAttribute("data-index", items.length);
+    img.parentNode.insertBefore(a, img);
+    a.appendChild(img);
+
+    items.push({
+      src: img.currentSrc || img.src,
+      type: "image",
+      opts: { caption: img.alt || "" }
+    });
   });
 
-  $('[data-fancybox="gallery"]').fancybox({
-    thumbs: { autoStart: true },
-    buttons: ["zoom", "slideShow", "fullScreen", "thumbs", "close"],
-    caption: function () {
-      return this.getAttribute("data-caption") || "";
-    }
+  // 点击时手动打开，指定从第几张开始
+  container.addEventListener("click", function (e) {
+    const a = e.target.closest("a.fancybox-item");
+    if (!a) return;
+    e.preventDefault();
+    const idx = parseInt(a.getAttribute("data-index"), 10) || 0;
+    $.fancybox.open(items, {
+      thumbs: { autoStart: true },
+      buttons: ["zoom", "slideShow", "fullScreen", "thumbs", "close"],
+      loop: true
+    }, idx);
   });
 });
 </script>
