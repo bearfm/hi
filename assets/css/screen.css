@@ -242,7 +242,7 @@ span.author-meta {
 
 span.post-date,
 span.post-read {
-    color: rgba(0, 0, 0, .44);
+    color: var(--bs-color-secondary);
 }
 
 span.post-read-more {
@@ -254,7 +254,7 @@ span.post-read-more {
 }
 
 span.post-read-more a {
-    color: rgba(0, 0, 0, .44);
+    color: var(--bs-color-secondary);
 }
 
 span.post-name a,
@@ -376,7 +376,6 @@ span.post-read-more a:hover {
     padding-block-end: 12px;
     font-size: 0.8rem;
     margin-block-start: 50px;
-    margin-block-end: 62px;
     position: relative;
 }
 
@@ -390,8 +389,6 @@ span.post-read-more a:hover {
     line-height: 1.84;
     color: var(--bs-color);
 }
-
-
 
 .article-post h2{
      font-family: "Noto Serif SC", Georgia, serif;
@@ -439,6 +436,76 @@ span.post-read-more a:hover {
     padding-inline-end: .5rem;
 }
 
+.article-post .image-grid {
+    display: grid;
+    gap: 12px;
+    margin: 1.5em 0;
+}
+
+.article-post .image-grid-1 { grid-template-columns: 1fr; }
+.article-post .image-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.article-post .image-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.article-post .image-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.article-post .image-grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-post .image-grid a:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.article-post .image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.article-post .image-figure {
+    margin: 1.5em auto;
+    text-align: center;
+    max-width: 100%;
+}
+
+.article-post .image-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.article-post .image-figure figcaption {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.article-post .image-figure.w-25 img { width: 25%; }
+.article-post .image-figure.w-50 img { width: 50%; }
+.article-post .image-figure.w-75 img { width: 75%; }
+.article-post .image-figure.w-100 img { width: 100%; }
+
+@media screen and (max-width: 768px) {
+  .article-post .image-grid-2,
+  .article-post .image-grid-3,
+  .article-post .image-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .article-post .image-figure.w-25 img,
+  .article-post .image-figure.w-50 img,
+  .article-post .image-figure.w-75 img {
+    width: 100%;
+  }
+}
+
 .article-content img {
   max-width: 100%;
   height: auto;
@@ -471,6 +538,8 @@ span.post-read-more a:hover {
   letter-spacing: 0.8em;
   font-size: 1.2rem;
 }
+
+
 
 blockquote {
     border-inline-start: 2px solid var(--bs-quote-border);
