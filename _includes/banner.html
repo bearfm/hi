@@ -1,14 +1,12 @@
 <img id="themeIllust" class="themeIllust"
-     src="https://cos.ezradio.net/theme/theme_home.png" alt="" style="float: inline-start;">
+     src="https://cos.ezradio.net/theme/bbb/tbh1.avif" alt="" style="float: inline-start;">
 
 <script>
 (function () {
-  var MAP  = [2, 1, 2, 3, 1, 2, 3, 1, 2, 3];
-  var base = "https://cos.ezradio.net/theme/";
+  var base = "https://cos.ezradio.net/theme/bbb/";
 
-  var tail = new Date().getDate() % 10;
-  var n    = MAP[tail];
-  var name = (n === 1) ? "theme_home.png" : "theme_home" + n + ".png";
+  var tail = new Date().getDate() % 10;        // 取日期个位：1→1, 10→0, 21→1, 31→1 ...
+  var name = "tbh" + tail + ".avif";           // 尾号几就是 tbh几.avif
 
   var img = document.getElementById("themeIllust");
   if (img && img.src.indexOf(name) === -1) {
