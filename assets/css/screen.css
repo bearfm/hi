@@ -440,9 +440,8 @@ span.post-read-more a:hover {
 .article-post img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 2rem 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 /* fancybox 包裹层不要继承任何布局干扰 */
 .article-post aa[data-fancybox] {
