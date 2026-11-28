@@ -2,7 +2,7 @@
 layout: post
 title: "菜市场：本地味！"
 author: me
-category: [ Lifestyle,Travelogue ]
+category: [ Lifestyle,Travelogue,Foodie ]
 image: https://cos.ezradio.net/post/b90f0e329723e47776a034a9bc113f11.avif?imageSlim
 ---
 
