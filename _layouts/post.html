@@ -166,11 +166,20 @@ https://search.google.com/structured-data/testing-tool/u/0/
 <link rel="stylesheet" href="https://cos.ezradio.net/ajax/libs/lightbox2/2.12.0/css/lightbox.min.css">
 <script src="https://cos.ezradio.net/ajax/libs/lightbox2/2.12.0/js/lightbox.min.js"></script>
 <script>
-  // 可选配置
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,        // 最后一张循环到第一张
-    'albumLabel': "图片 %1 / %2",
-    'fadeDuration': 300
+  document.addEventListener('DOMContentLoaded', function () {
+    var scope = document.querySelector('.article-post');
+    if (!scope) return;
+
+    scope.querySelectorAll('img').forEach(function (img) {
+      if (img.closest('a[data-lightbox]')) return;
+
+      var a = document.createElement('a');
+      a.href = img.currentSrc || img.src;
+      a.setAttribute('data-lightbox', 'post-gallery');
+      a.setAttribute('data-title', img.alt || '');   // 图注直接取 alt
+
+      img.parentNode.insertBefore(a, img);
+      a.appendChild(img);
+    });
   });
 </script>
