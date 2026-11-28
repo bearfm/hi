@@ -436,103 +436,87 @@ span.post-read-more a:hover {
     padding-inline-end: .5rem;
 }
 
-.article-post .image-grid {
-    display: grid;
-    gap: 12px;
-    margin: 1.5em 0;
-}
-
-.article-post .image-grid-1 { grid-template-columns: 1fr; }
-.article-post .image-grid-2 { grid-template-columns: repeat(2, 1fr); }
-.article-post .image-grid-3 { grid-template-columns: repeat(3, 1fr); }
-.article-post .image-grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-.article-post .image-grid a {
-    display: block;
-    overflow: hidden;
-    border-radius: 6px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.article-post .image-grid a:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.article-post .image-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.article-post .image-figure {
-    margin: 1.5em auto;
-    text-align: center;
-    max-width: 100%;
-}
-
-.article-post .image-figure img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.article-post .image-figure figcaption {
-    margin-top: 8px;
-    font-size: 0.85em;
-    color: #666;
-    text-align: center;
-    line-height: 1.5;
-}
-
-.article-post .image-figure.w-25 img { width: 25%; }
-.article-post .image-figure.w-50 img { width: 50%; }
-.article-post .image-figure.w-75 img { width: 75%; }
-.article-post .image-figure.w-100 img { width: 100%; }
-
-@media screen and (max-width: 768px) {
-  .article-post .image-grid-2,
-  .article-post .image-grid-3,
-  .article-post .image-grid-4 {
-    grid-template-columns: 1fr;
-  }
-  
-  .article-post .image-figure.w-25 img,
-  .article-post .image-figure.w-50 img,
-  .article-post .image-figure.w-75 img {
-    width: 100%;
-  }
-}
-
-.article-content img {
+/* ========== 图片基础 ========== */
+.article-post img {
   max-width: 100%;
   height: auto;
-  border-radius: 3px;
-  display: block;
-  margin: 0 auto;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-.article-content figcaption {
-  margin-top: 0.8em;
-  font-size: 0.85rem;
-  color: var(--bs-color-secondary);
-  letter-spacing: 0.05em;
+/* ========== 单图：alt 作为说明文字 ========== */
+.article-post p:has(> img:only-child) img[alt]:not([alt=""]) {
+  margin-bottom: .5rem;
+}
+.article-post p:has(> img:only-child) img[alt]:not([alt=""])::after {
+  content: attr(alt);
+  display: block;
+  margin: 0 0 2rem;
+  font-size: .8rem;
+  color: #8a8a8a;
+  text-align: center;
   line-height: 1.6;
 }
 
-.article-content strong {
+/* ========== 多图：自动网格 ========== */
+.article-post p:has(> img:nth-child(2)),
+.article-post p:has(> a > img:nth-child(2)) {
+  display: grid;
+  gap: .5rem;
+  margin: 2rem 0;
+  grid-template-columns: 1fr 1fr;
+}
+
+.article-post p:has(> img:nth-child(3)),
+.article-post p:has(> a > img:nth-child(3)) {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.article-post p:has(> img:nth-child(4)),
+.article-post p:has(> a > img:nth-child(4)) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.article-post p:has(> img:nth-child(2)) img,
+.article-post p:has(> a > img:nth-child(2)) img {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.article-post p:has(> img:nth-child(2)) img::after { content: none; }
+
+/* ========== 手机端单列 ========== */
+@media (max-width: 768px) {
+  .article-post p:has(> img:nth-child(2)),
+  .article-post p:has(> a > img:nth-child(2)),
+  .article-post p:has(> img:nth-child(3)),
+  .article-post p:has(> a > img:nth-child(3)),
+  .article-post p:has(> img:nth-child(4)),
+  .article-post p:has(> a > img:nth-child(4)) {
+    grid-template-columns: 1fr;
+  }
+  .article-post p:has(> img:nth-child(2)) img,
+  .article-post p:has(> a > img:nth-child(2)) img {
+    aspect-ratio: auto;
+    height: auto;
+  }
+}
+
+.article-post strong {
   font-weight: 600;
   color: var(--bs-color);
 }
 
-.article-content hr {
+.article-post hr {
   border: none;
   text-align: center;
   margin: 3em 0;
 }
-.article-content hr::before {
+.article-post hr::before {
   content: "· · ·";
   color: var(--bs-color-secondary);
   letter-spacing: 0.8em;
